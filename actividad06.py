@@ -1,4 +1,4 @@
-def saludar():
+def hello():
     print("-----------Bienvenido a mi programa-----------")
 
 def suma_t(n):
@@ -7,7 +7,7 @@ def suma_t(n):
         print(total_sum)
     return total_sum
 
-def promedio_t(a,b):
+def average(a,b):
     return a +b / 2
 
 def n_p_n (a,b):
@@ -42,7 +42,7 @@ def pro_menor_mayor(n):
         print(f"El numero menor es: {minimo}")
 
 while True:
-    saludar()
+    hello()
     print ("1. Lista de numeros\n"
             "2. Calcular el área de un triángulo\n"
             "3. Verificar si un número es par o impar\n"
@@ -54,20 +54,46 @@ while True:
         case "1":
              print("1. suma de numeros\n"
                    "2. Promedio de numeros\n"
-                   "3. La cantidad de numero positivos y negativos\n ")
+                   "3. La cantidad de numero positivos y negativos\n"
+                   "4. Salir\n ")
              opcion1 = input("Ingrese la opcion que desee usar: ")
-             if opcion1 == "1":
-                numero = int(input("Ingrese un numero: "))
-                suma_t(numero)
-                print(numero)
-             elif opcion1 == "2":
-                 numero1 = int(input("Ingrese el primero numero: "))
-                 numero2 = int(input("Ingrese el segundo numero: "))
-                 promedio_t(numero1, numero2)
-                 print(promedio_t(numero1, numero2))
+             match opcion1 == "1":
+                 case "1":
+                    numero = int(input("Ingrese un numero: "))
+                    suma_t(numero)
+                    print(numero)
+                 case "2":
+                     numero1 = int(input("Ingrese el primero numero: "))
+                     numero2 = int(input("Ingrese el segundo numero: "))
+                     average(numero1, numero2)
+                     print(average(numero1, numero2))
+                 case "3":
+                     numero1 = int(input("Ingrese el primer numero: "))
+                     numero2 = int(input("Ingrese el segundo numero: "))
+                     n_p_n(numero1, numero2)
+                     print(n_p_n(numero1, numero2))
+                 case "4":
+                     break
+                 case _:
+                     print("Ingrese una opcion valida")
         case "2":
-            numero1 = int(input("Ingrese el numero 1: "))
-            numero2 = int(input("Ingrese el numero 2: "))
-            promedio_t(numero1,numero2)
-            print(promedio_t(numero1, numero2))
+            base = int(input("Ingrese la medida de la base: "))
+            altura = int(input("Ingrese la medidad de la altura: "))
+            calc_area(base, altura)
+            print(calc_area(base,altura))
         case "3":
+            numero_par = int(input("Ingrese el numero que desea verificar"))
+            n_par(numero_par)
+            print(n_par(numero_par))
+        case "4":
+            calif = int(input("Ingrese calificiacion"))
+            prom_cali(calif)
+            print(prom_cali(calif))
+        case "5":
+            digito = int(input("Ingrese un numero"))
+            pro_menor_mayor(digito)
+            print(pro_menor_mayor(digito))
+        case _:
+            print("Ingrese una opcion valida")
+
+            break
